@@ -866,8 +866,8 @@
 
     .cert-org {
       color: var(--muted);
-      font-family: var(--font-italic);
-      font-size: 1.2rem;
+      font-family: var(--font-body);
+      font-size: 1rem;
     }
 
     .cert-badge {
@@ -878,6 +878,67 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--accent-light);
+    }
+
+    /* Freelance */
+    .freelance-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border-subtle);
+      border: 1px solid var(--border-subtle);
+      margin-bottom: 2rem;
+    }
+
+    .freelance-card {
+      background: var(--bg);
+      padding: 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+
+    .freelance-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--accent);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.4s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    .freelance-card:hover {
+      background: var(--bg-surface);
+    }
+
+    .freelance-card:hover::before {
+      transform: scaleY(1);
+    }
+
+    .freelance-icon {
+      margin-bottom: 1.5rem;
+    }
+
+    .freelance-title {
+      font-size: 1.3rem;
+      font-family: var(--font-display);
+      margin-bottom: 0.8rem;
+    }
+
+    .freelance-desc {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 600px) {
+      .freelance-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* Contact */
@@ -1026,6 +1087,7 @@
       <a href="#projects" class="magnetic">Projects</a>
       <a href="#design" class="magnetic">Design</a>
       <a href="#certs" class="magnetic">Certs</a>
+      <a href="#freelance" class="magnetic">Freelance</a>
       <a href="#contact" class="magnetic">Contact</a>
     </div>
   </nav>
@@ -1044,7 +1106,7 @@
           class="rotating-text" id="rotating-text">intelligent experiences.</span></p>
       <div class="cta-container reveal stagger-3">
         <a href="#projects" class="btn btn-primary magnetic">View Work</a>
-        <a href="#contact" class="btn btn-outline magnetic">Get in touch ↗</a>
+        <a href="#contact" class="btn btn-outline magnetic">Get in touch &#x2197;&#xFE0E;</a>
       </div>
     </div>
     <div class="scroll-indicator">
@@ -1161,11 +1223,11 @@
               management and peer networking.</p>
             <a href="https://github.com/Abhigth/Uni-Fi" target="_blank" class="btn btn-outline magnetic"
               style="margin-top: 2rem; align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">View Project
-              ↗</a>
+              &#x2197;&#xFE0E;</a>
           </div>
           <div class="card-footer">
             <span>01 / 05</span>
-            <span class="arrow">↗</span>
+            <span class="arrow">&#x2197;&#xFE0E;</span>
           </div>
         </div>
 
@@ -1183,11 +1245,11 @@
               providing corrective feedback.</p>
             <a href="https://github.com/Abhigth/MoveRight-AI" target="_blank" class="btn btn-outline magnetic"
               style="margin-top: 2rem; align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">View Project
-              ↗</a>
+              &#x2197;&#xFE0E;</a>
           </div>
           <div class="card-footer">
             <span>02 / 05</span>
-            <span class="arrow">↗</span>
+            <span class="arrow">&#x2197;&#xFE0E;</span>
           </div>
         </div>
 
@@ -1206,11 +1268,11 @@
               forecasting for farmers.</p>
             <a href="https://github.com/Abhigth/Climate-Cast" target="_blank" class="btn btn-outline magnetic"
               style="margin-top: 2rem; align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">View Project
-              ↗</a>
+              &#x2197;&#xFE0E;</a>
           </div>
           <div class="card-footer">
             <span>03 / 05</span>
-            <span class="arrow">↗</span>
+            <span class="arrow">&#x2197;&#xFE0E;</span>
           </div>
         </div>
 
@@ -1228,11 +1290,11 @@
               crop failure risk levels.</p>
             <a href="https://github.com/Abhigth/Agronirvana-Prototype" target="_blank" class="btn btn-outline magnetic"
               style="margin-top: 2rem; align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">View Project
-              ↗</a>
+              &#x2197;&#xFE0E;</a>
           </div>
           <div class="card-footer">
             <span>04 / 05</span>
-            <span class="arrow">↗</span>
+            <span class="arrow">&#x2197;&#xFE0E;</span>
           </div>
         </div>
 
@@ -1251,11 +1313,11 @@
               and promotes sustainable farming.</p>
             <a href="#" target="_blank" class="btn btn-outline magnetic"
               style="margin-top: 2rem; align-self: flex-start; padding: 0.6rem 1.2rem; font-size: 0.8rem;">View Project
-              ↗</a>
+              &#x2197;&#xFE0E;</a>
           </div>
           <div class="card-footer">
             <span>05 / 05</span>
-            <span class="arrow">↗</span>
+            <span class="arrow">&#x2197;&#xFE0E;</span>
           </div>
         </div>
 
@@ -1349,7 +1411,7 @@
           </div>
         </div>
         <a href="https://drive.google.com/file/d/1GZH2jHQJHE_BVL2Q_OY05SUwFIWiDqLA/view?usp=drive_link" target="_blank"
-          class="btn btn-outline magnetic" style="padding: 0.6rem 1.2rem; font-size: 0.8rem;">View Certificate ↗</a>
+          class="btn btn-outline magnetic" style="padding: 0.6rem 1.2rem; font-size: 0.8rem;">View Certificate &#x2197;&#xFE0E;</a>
       </div>
 
       <div class="cert-item hoverable">
@@ -1371,15 +1433,71 @@
           </div>
         </div>
         <a href="https://drive.google.com/file/d/1H3B2Kx_gnXgl8K17ifPaqCZ8GaWuTcoe/view?usp=drive_link" target="_blank"
-          class="btn btn-outline magnetic" style="padding: 0.6rem 1.2rem; font-size: 0.8rem;">View Certificate ↗</a>
+          class="btn btn-outline magnetic" style="padding: 0.6rem 1.2rem; font-size: 0.8rem;">View Certificate &#x2197;&#xFE0E;</a>
       </div>
+    </div>
+  </section>
+
+  <!-- Freelance Web Development -->
+  <section id="freelance">
+    <div class="section-label reveal">06 / Freelance</div>
+    <h2 class="display reveal" style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem;">Website <span class="italic-serif">Development.</span></h2>
+    <p class="contact-sub reveal" style="margin-bottom: 4rem; max-width: 600px;">I take on freelance projects building fast, modern, and beautiful websites — from landing pages to full-stack web apps. Let's build something that stands out.</p>
+
+    <div class="freelance-grid reveal stagger-1">
+      <div class="freelance-card">
+        <div class="freelance-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <path d="M3 9h18"/>
+            <path d="M9 21V9"/>
+          </svg>
+        </div>
+        <h3 class="freelance-title">Landing Pages</h3>
+        <p class="freelance-desc">Sleek, conversion-focused landing pages with smooth animations and pixel-perfect design.</p>
+      </div>
+      <div class="freelance-card">
+        <div class="freelance-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <ellipse cx="12" cy="5" rx="9" ry="3"/>
+            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+          </svg>
+        </div>
+        <h3 class="freelance-title">Full-Stack Apps</h3>
+        <p class="freelance-desc">End-to-end web applications with backend APIs, databases, and responsive frontend interfaces.</p>
+      </div>
+      <div class="freelance-card">
+        <div class="freelance-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9"/>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+          </svg>
+        </div>
+        <h3 class="freelance-title">Portfolio & Personal Sites</h3>
+        <p class="freelance-desc">Custom-designed portfolio websites that reflect your unique identity and showcase your work beautifully.</p>
+      </div>
+      <div class="freelance-card">
+        <div class="freelance-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+          </svg>
+        </div>
+        <h3 class="freelance-title">Frontend Development</h3>
+        <p class="freelance-desc">Responsive, interactive interfaces built with React, HTML/CSS, and JavaScript — optimised for performance and every screen size.</p>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top: 4rem; text-align: center;">
+      <a href="mailto:just.abhijithb@gmail.com" class="btn btn-primary magnetic" style="font-size: 1rem; padding: 1rem 2.5rem;">Hire me for your project &#x2197;&#xFE0E;</a>
     </div>
   </section>
 
   <!-- Contact -->
   <section class="contact" id="contact">
     <div class="watermark" id="watermark">HELLO</div>
-    <div class="section-label reveal">06 — Contact</div>
+    <div class="section-label reveal">07 — Contact</div>
 
     <h2 class="contact-heading reveal stagger-1">Let's build <br><span class="italic-serif">something great.</span></h2>
     <p class="contact-sub reveal stagger-2">Currently open for internships, freelance opportunities, and collaborative
