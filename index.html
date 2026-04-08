@@ -984,7 +984,8 @@
     }
 
     .contact-link {
-      display: inline-flex;
+      display: flex;
+      flex: 1;
       align-items: center;
       gap: 1.25rem;
       font-size: 1.25rem;
@@ -997,6 +998,7 @@
       border-radius: 0.75rem;
       background: rgba(255, 255, 255, 0.02);
       transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      width: 100%;
     }
 
     .contact-link:hover {
@@ -1064,6 +1066,60 @@
         gap: 1rem;
         text-align: center;
       }
+    }
+    .contact-item-group {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 0.5rem;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--bg-surface);
+      border: 1px solid var(--accent);
+      color: var(--text);
+      padding: 0.8rem 1.5rem;
+      border-radius: 2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      z-index: 10001;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s;
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      pointer-events: none;
+    }
+
+    .toast.active {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    .copy-btn {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-subtle);
+      color: var(--muted);
+      padding: 0.4rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 0.5rem;
+    }
+
+    .copy-btn:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
     }
   </style>
 </head>
@@ -1490,7 +1546,7 @@
     </div>
 
     <div class="reveal" style="margin-top: 4rem; text-align: center;">
-      <a href="mailto:just.abhijithb@gmail.com" class="btn btn-primary magnetic" style="font-size: 1rem; padding: 1rem 2.5rem;">Hire me for your project &#x2197;&#xFE0E;</a>
+      <a href="mailto:just.abhijithb@gmail.com?subject=Website%20Development%20Project%20Inquiry&body=Hi%20Abhijith%2C%0A%0AI'm%20interested%20in%20working%20with%20you%20on%20a%20website%20development%20project.%20Here%20are%20some%20brief%20details%3A%0A%0A-%20Project%20Type%3A%0A-%20Timeline%3A%0A-%20Estimated%20Budget%3A%0A%0ALooking%20forward%20to%20hearing%20from%20you!" target="_blank" class="btn btn-primary magnetic" style="font-size: 1rem; padding: 1rem 2.5rem;" onclick="copyToClipboard('just.abhijithb@gmail.com', event)">Hire me for your project &#x2197;&#xFE0E;</a>
     </div>
   </section>
 
@@ -1504,44 +1560,63 @@
       creative coding or ML projects. Drop a message to say hi.</p>
 
     <div class="contact-links reveal stagger-3">
-      <a href="mailto:abhijithb0604@gmail.com" class="contact-link magnetic">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-          <polyline points="22,6 12,13 2,6"></polyline>
-        </svg>
-        abhijithb0604@gmail.com
-      </a>
-      <a href="tel:+917736976792" class="contact-link magnetic">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <path
-            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-          </path>
-        </svg>
-        +91 7736976792
-      </a>
-      <a href="https://github.com/Abhigth" target="_blank" class="contact-link magnetic">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <path
-            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-          </path>
-        </svg>
-        github.com/Abhigth
-      </a>
-      <a href="https://drive.google.com/file/d/1w2eg44c-AT5t5auVUQPxkf4qddsvqdtg/view?usp=drive_link" target="_blank"
-        class="contact-link magnetic">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-          <polyline points="14 2 14 8 20 8"></polyline>
-          <line x1="16" y1="13" x2="8" y2="13"></line>
-          <line x1="16" y1="17" x2="8" y2="17"></line>
-          <polyline points="10 9 9 9 8 9"></polyline>
-        </svg>
-        View Resume
-      </a>
+      <div class="contact-item-group">
+        <a href="mailto:abhijithb0604@gmail.com?subject=Hello%20from%20Portfolio&body=Hi%20Abhijith%2C%0A%0AI%20was%20just%20checking%20out%20your%20portfolio%20and%20wanted%20to%20reach%20out%20regarding%3A%0A%0A[Your%20message%20here]%0A%0ABest%20regards%2C" target="_blank" class="contact-link magnetic">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          abhijithb0604@gmail.com
+        </a>
+        <button class="copy-btn hoverable" onclick="copyToClipboard('abhijithb0604@gmail.com')" title="Copy Email">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </button>
+      </div>
+
+      <div class="contact-item-group">
+        <a href="tel:+917736976792" class="contact-link magnetic">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+            </path>
+          </svg>
+          +91 7736976792
+        </a>
+        <button class="copy-btn hoverable" onclick="copyToClipboard('+917736976792')" title="Copy Phone">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </button>
+      </div>
+
+      <div class="contact-item-group">
+        <a href="https://github.com/Abhigth" target="_blank" class="contact-link magnetic">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+            </path>
+          </svg>
+          github.com/Abhigth
+        </a>
+        <div style="width: 38px;"></div> <!-- Spacer to match copy-btn width -->
+      </div>
+
+      <div class="contact-item-group">
+        <a href="https://drive.google.com/file/d/1w2eg44c-AT5t5auVUQPxkf4qddsvqdtg/view?usp=drive_link" target="_blank"
+          class="contact-link magnetic">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          View Resume
+        </a>
+        <div style="width: 38px;"></div> <!-- Spacer to match copy-btn width -->
+      </div>
     </div>
   </section>
 
@@ -1551,7 +1626,29 @@
     <div>Bengaluru, India</div>
   </footer>
 
+  <div id="toast" class="toast">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+    <span id="toast-message">Copied to clipboard!</span>
+  </div>
+
   <script>
+    function copyToClipboard(text, e) {
+      navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById('toast');
+        const message = document.getElementById('toast-message');
+        
+        message.innerText = `Copied: ${text}`;
+        toast.classList.add('active');
+        
+        setTimeout(() => {
+          toast.classList.remove('active');
+        }, 3000);
+      });
+      
+      // If event exists, we don't prevent default, but we provide feedback
+      // This allows mailto to still try to fire
+    }
+
     // --- Custom Cursor & Ambient Background ---
     const dot = document.getElementById('cursor-dot');
     const ring = document.getElementById('cursor-ring');
