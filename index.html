@@ -220,7 +220,9 @@
       height: 100%;
       pointer-events: none;
       z-index: 0;
-      opacity: 0.85;
+      opacity: 0.6;
+      -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0) 70%);
+      mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0) 70%);
     }
 
     .hero::before {
@@ -1824,18 +1826,18 @@ void main() {
       const props = {
         colors: ['#7C3AED', '#a78bfa', '#06B6D4', '#c084fc'],
         count: 4,
-        speed: 0.4,
-        amplitude: 1.1,
-        waviness: 0.9,
-        thickness: 0.75,
-        glow: 2.4,
-        taper: 2.5,
+        speed: 0.35,
+        amplitude: 0.7,
+        waviness: 0.8,
+        thickness: 0.6,
+        glow: 1.6,
+        taper: 2.0,
         spread: 1.0,
         hueShift: 0,
-        intensity: 0.55,
-        saturation: 1.4,
-        opacity: 1.0,
-        scale: 1.4
+        intensity: 0.35,
+        saturation: 1.2,
+        opacity: 0.75,
+        scale: 1.6
       };
 
       function hexToRgb(hex) {
